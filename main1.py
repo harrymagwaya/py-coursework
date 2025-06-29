@@ -15,14 +15,11 @@
 # the average of the numbers in the list by dividing the sum by the total number of numbers. - Count the Numbers: Count how
 # many numbers are positive, negative, and zero.
 
-user_entry = input("Enter a list of numbers (Please separate by spaces)")
-
-
+user_entry = input("Enter a list of numbers (Please separate by spaces):  ")
 user_entry_clean = user_entry.split()
 print(user_entry_clean)
 
 numbers_list = [int(num)for num in user_entry_clean]
-
 print(numbers_list)
 
 sum_of_num = 0
@@ -37,14 +34,21 @@ count_zero = 0
 
 num_of_items = len(numbers_list)
 
-
 for num in numbers_list:
     if num > 0:
         count_positive  = count_positive + 1
         print("Positive: ", num , "is positive")
+        if num %2 == 0:
+            print(num, "is an even number")
+        else:
+            print(num, "is an odd number")
     elif num < 0:
         count_negative = count_negative + 1
         print("Negative: ", num , "is less than zero")
+        if num % 2 == 0:
+            print(num, "is an even number")
+        else:
+            print(num, "is an odd number")
     else:
         count_zero = count_zero + 1
         print(num , "is exactly zero")
