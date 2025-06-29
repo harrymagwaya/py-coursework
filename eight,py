@@ -1,0 +1,57 @@
+
+matrix1= []
+matrix2 = []
+matrix3 = []
+
+row_num = int(input("Enter how many rows "))
+
+col_num = int(input("Enter how many columns "))
+
+#input matrix1 elem
+print("Enter elements for matrix 1")
+
+for i in range(row_num):
+    row = []
+    for j in range(col_num):
+        element = int(input(f"Enter an element [{i}][{j}]: "))
+        row.append(element)
+    matrix1.append(row)
+
+
+
+#input matrixx2 elem
+print("Enter elements for matrix 2")
+
+for i in range(row_num):
+    row = []
+    for j in range(col_num):
+        element = int(input(f"Enter an element [{i}][{j}]: "))
+        row.append(element)
+    matrix2.append(row)
+
+
+#function to print matrix
+def print_matrix(matrix):
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+
+#print matrix
+print("Matrix 1: ")
+print_matrix(matrix1)
+
+print("Matrix 2")
+print_matrix(matrix2)
+
+
+#adding natrices element wise
+for i in range(row_num):
+    row = []
+    for j in range(col_num):
+        row.append(matrix1[i][j] + matrix2[i][j])
+    matrix3.append(row)
+
+#display result 
+print("\n result of matrix 1 + matrix 2")
+
+print_matrix(matrix3)
